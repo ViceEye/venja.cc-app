@@ -14,6 +14,13 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.8",
     "@mui/material": "^5.14.8",
+    "@tiptap/extension-color": "^2.1.8",
+    "@tiptap/extension-highlight": "^2.1.8",
+    "@tiptap/extension-image": "^2.1.8",
+    "@tiptap/extension-typography": "^2.1.8",
+    "@tiptap/pm": "^2.1.8",
+    "@tiptap/react": "^2.1.8",
+    "@tiptap/starter-kit": "^2.1.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
