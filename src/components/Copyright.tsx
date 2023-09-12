@@ -2,10 +2,14 @@ import * as React from "react"
 
 import { Typography, Link, TypographyOwnProps } from "@mui/material"
 
-export const Copyright: React.FC = (props: TypographyOwnProps) => {
+interface CopyrightProps {
+  props?: TypographyOwnProps
+}
+
+const Copyright: React.FC<CopyrightProps> = ({ props }) => {
   return (
-    <Typography color='text.secondary' {...props}>
-      {"Copyright © "}
+    <Typography variant='body2' color='text.secondary' {...props}>
+      {"MIT Licensed | Copyright © "}
       <Link color='inherit' href='/'>
         Venja.cc
       </Link>{" "}
@@ -14,3 +18,5 @@ export const Copyright: React.FC = (props: TypographyOwnProps) => {
     </Typography>
   )
 }
+
+export default Copyright

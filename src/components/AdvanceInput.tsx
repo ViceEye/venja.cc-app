@@ -7,7 +7,7 @@ interface ColorPickerProps {
   Icon: React.ElementType;
 }
 
-const ImageUpload: React.FC<ColorPickerProps> = ({ inputProps, Icon }) => {
+const AdvanceInput: React.FC<ColorPickerProps> = ({ inputProps, Icon }) => {
   // Create a ref for the Color Input
   const inputRef = React.useRef<HTMLInputElement>(null);
 
@@ -43,4 +43,4 @@ const ImageUpload: React.FC<ColorPickerProps> = ({ inputProps, Icon }) => {
   );
 };
 
-export default ImageUpload;
+export default AdvanceInput
