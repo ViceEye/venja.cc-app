@@ -1,18 +1,19 @@
 import * as React from "react"
 
-import { Box, Button, Checkbox, FormControlLabel, Link, Paper } from "@mui/material"
+import { Box, Button, Link, Paper } from "@mui/material"
 import Grid from "@mui/material/Unstable_Grid2"
 
 import Copyright from "../components/Copyright"
 import NoStarTextField from "../components/NoStarTextField"
 
-const SignIn: React.FC = () => {
+const SignUp: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
     console.log({
       username: data.get("username"),
       password: data.get("password"),
+      repeated: data.get("repeated"),
     })
   }
 
@@ -35,32 +36,19 @@ const SignIn: React.FC = () => {
         <Grid xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box p={3} mx={"auto"} my={16} maxWidth={"sm"}>
             <Box component='form' noValidate onSubmit={handleSubmit}>
-              <NoStarTextField
-                id='username'
-                props={{ autoComplete: "username", autoFocus: true, label: "Username" }}
-              />
+              <NoStarTextField id='username' props={{ autoFocus: true, label: "Username" }} />
               <Box>
-                <Link href='/register' variant='body2'>
-                  {"Don't have an account? Sign Up"}
+                <Link href='/login' variant='body2'>
+                  {"Already have an account? Sign in"}
                 </Link>
               </Box>
+              <NoStarTextField id='password' props={{ type: "password", label: "Password" }} />
               <NoStarTextField
-                id='password'
-                props={{ type: "password", autoComplete: "current-password", label: "Password" }}
+                id='repeated'
+                props={{ type: "repeated", label: "Repeat Password" }}
               />
-              <Box>
-                <Link href='#' variant='body2'>
-                  Forgot password?
-                </Link>
-              </Box>
-              <Box mt={2}>
-                <FormControlLabel
-                  control={<Checkbox value='remember' color='primary' />}
-                  label='Remember me'
-                />
-              </Box>
-              <Button type='submit' fullWidth variant='contained' sx={{ my: 1 }}>
-                Sign In
+              <Button type='submit' fullWidth variant='contained' sx={{ my: 2 }}>
+                Sign Up
               </Button>
               <Copyright props={{ align: "center", sx: { mt: 5 } }} />
             </Box>
@@ -71,4 +59,4 @@ const SignIn: React.FC = () => {
   )
 }
 
-export default SignIn
+export default SignUp

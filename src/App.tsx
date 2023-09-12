@@ -5,8 +5,10 @@ import { Box, CssBaseline, ThemeProvider } from "@mui/material"
 import Footer from "./components/Footer"
 import Dashboard from "./pages/Dashboard"
 import Grids from "./pages/Grids"
-import SignInSide from "./pages/Login"
+import SignIn from "./pages/Login"
+import SignUp from "./pages/Register"
 import WIP from "./pages/WIP"
+
 import { theme } from "./styles/theme"
 
 const App: React.FC = () => {
@@ -20,7 +22,8 @@ const App: React.FC = () => {
               <Route path='/' element={<Dashboard />} />
               <Route path='/grids' element={<Grids />} />
               <Route path='/wip' element={<WIP />} />
-              <Route path='/login' element={<SignInSide />} />
+              <Route path='/login' element={<SignIn />} />
+              <Route path='/register' element={<SignUp />} />
             </Routes>
             <Footer />
           </Box>
