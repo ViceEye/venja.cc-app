@@ -1,0 +1,16 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "venja.cc-app",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "extension": [
+    "dbaeumer.vscode-eslint",
+    "editorConfig.editorConfig",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
+    "naumovs.color-highlight"
+  ]
+}

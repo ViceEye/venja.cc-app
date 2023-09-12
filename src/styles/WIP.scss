@@ -1,0 +1,18 @@
+.wip-container {
+  align-content: center;
+  text-align: center;
+
+  img:hover {
+    filter: drop-shadow(0 0 2em blue);
+    cursor: default;
+  }
+
+  h2 {
+    font-weight: 700;
+  }
+
+  h2:hover {
+    filter: drop-shadow(0 0 0.5em red);
+    cursor: default;
+  }
+}
