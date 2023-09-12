@@ -9,8 +9,6 @@
     "dbaeumer.vscode-eslint",
     "editorConfig.editorConfig",
     "esbenp.prettier-vscode",
-    "bradlc.vscode-tailwindcss",
-    "csstools.postcss",
     "naumovs.color-highlight"
   ]
 }
