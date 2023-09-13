@@ -8,12 +8,17 @@ interface NoStarTextFieldProps {
 
 const NoStarTextField: React.FC<NoStarTextFieldProps> = ({ id, props }) => {
   const NoStarTextField = styled(TextField)(() => ({
+    "& .MuiInputLabel-root": {
+      fontSize: 15,
+    },
     "& .MuiInputLabel-asterisk": {
       display: "none",
     },
   }))
 
-  return <NoStarTextField margin='normal' required fullWidth id={id} name={id} {...props} />
+  return (
+    <NoStarTextField margin='dense' size='small' required fullWidth id={id} name={id} {...props} />
+  )
 }
 
 export default NoStarTextField

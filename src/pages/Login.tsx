@@ -1,10 +1,16 @@
-import * as React from "react"
+import styled from "@emotion/styled"
+import { Box, Button, Checkbox, FormControlLabel, Link, Paper, Typography } from "@mui/material"
 
-import { Box, Button, Checkbox, FormControlLabel, Link, Paper } from "@mui/material"
-import Grid from "@mui/material/Unstable_Grid2"
-
-import Copyright from "../components/Copyright"
 import NoStarTextField from "../components/NoStarTextField"
+
+const SizedFormContrlLabel = styled(FormControlLabel)({
+  "& .MuiTypography-root": {
+    fontSize: 15,
+  },
+  "& .MuiSvgIcon-root": {
+    fontSize: 20,
+  },
+})
 
 const SignIn: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -18,28 +24,42 @@ const SignIn: React.FC = () => {
 
   return (
     <>
-      <Grid container component='main' sx={{ height: "100vh" }}>
-        <Grid
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: "url(https://source.unsplash.com/random?wallpapers)",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: (t) =>
-              t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <Grid xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box p={3} mx={"auto"} my={16} maxWidth={"sm"}>
+      <Box
+        className='background'
+        width={"100%"}
+        height={"100vh"}
+        sx={{ backgroundColor: "rgb(246,242,235)" }}
+      >
+        <Box
+          className='container'
+          mx={"auto"}
+          maxWidth={"sm"}
+          py={{ xs: 0, sm: 5 }}
+          px={{ xs: 0, sm: 10 }}
+        >
+          <Paper
+            elevation={1}
+            sx={{
+              height: { xs: "100vh", sm: "100%" },
+              my: { xs: 0, sm: 10 },
+              borderRadius: { xs: 0, sm: 8 },
+              px: 5,
+              py: { xs: 15, sm: 5 },
+              textAlign: "center",
+            }}
+          >
             <Box component='form' noValidate onSubmit={handleSubmit}>
+              <Typography px={5} py={1} fontSize={28} fontWeight={800}>
+                Login
+              </Typography>
+              <Typography px={5} pb={2}>
+                Hey, Enter your details to get sign in to your account
+              </Typography>
               <NoStarTextField
                 id='username'
                 props={{ autoComplete: "username", autoFocus: true, label: "Username" }}
               />
-              <Box>
+              <Box textAlign={"left"} mb={1}>
                 <Link href='/register' variant='body2'>
                   {"Don't have an account? Sign Up"}
                 </Link>
@@ -48,25 +68,21 @@ const SignIn: React.FC = () => {
                 id='password'
                 props={{ type: "password", autoComplete: "current-password", label: "Password" }}
               />
-              <Box>
+              <Box textAlign={"left"}>
                 <Link href='#' variant='body2'>
                   Forgot password?
                 </Link>
               </Box>
-              <Box mt={2}>
-                <FormControlLabel
-                  control={<Checkbox value='remember' color='primary' />}
-                  label='Remember me'
-                />
+              <Box textAlign={"left"}>
+                <SizedFormContrlLabel control={<Checkbox value='remember' />} label='Remember me' />
               </Box>
-              <Button type='submit' fullWidth variant='contained' sx={{ my: 1 }}>
+              <Button type='submit' fullWidth variant='contained' sx={{ mt: 1, mb: 3 }}>
                 Sign In
               </Button>
-              <Copyright props={{ align: "center", sx: { mt: 5 } }} />
             </Box>
-          </Box>
-        </Grid>
-      </Grid>
+          </Paper>
+        </Box>
+      </Box>
     </>
   )
 }

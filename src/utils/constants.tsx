@@ -1,2 +1,2 @@
 // List of pages not display footer
-export const footerNoShowList = ["/login", "/register"]
+export const footerNoShowList: string[] = []
