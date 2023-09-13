@@ -1,16 +1,6 @@
-import styled from "@emotion/styled"
-import { Box, Button, Checkbox, FormControlLabel, Link, Paper, Typography } from "@mui/material"
+import { Box, Button, Link, Paper, Typography } from "@mui/material"
 
 import NoStarTextField from "../components/NoStarTextField"
-
-const SizedFormContrlLabel = styled(FormControlLabel)({
-  "& .MuiTypography-root": {
-    fontSize: 15,
-  },
-  "& .MuiSvgIcon-root": {
-    fontSize: 20,
-  },
-})
 
 const SignIn1: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
