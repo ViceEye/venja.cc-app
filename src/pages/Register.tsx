@@ -2,7 +2,7 @@ import { Box, Button, Link, Paper, Typography } from "@mui/material"
 
 import NoStarTextField from "../components/NoStarTextField"
 
-const SignIn1: React.FC = () => {
+const SignUp: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
@@ -67,4 +67,4 @@ const SignIn1: React.FC = () => {
   )
 }
 
-export default SignIn1
+export default SignUp
