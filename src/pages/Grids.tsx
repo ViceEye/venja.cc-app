@@ -1,8 +1,12 @@
 import * as React from "react"
 
-import Grid from "@mui/material/Unstable_Grid2/Grid2"
 import { Box, Paper } from "@mui/material"
+import Grid from "@mui/material/Unstable_Grid2/Grid2"
+import ECard from "../components/element/ElementCard"
+import EImage from "../components/element/ElementImage"
+import ETypography from "../components/element/ElementTypography"
 
+// TEST PAGE
 const Grids: React.FC = () => {
   return (
     <>
@@ -31,6 +35,62 @@ const Grids: React.FC = () => {
               <h2 className='text-xl font-bold mb-2'>Card 4</h2>
               <p className='text-gray-700'>Details for Card 4</p>
             </Paper>
+          </Grid>
+        </Grid>
+      </Box>
+      <Box width={"100%"} p={2}>
+        <Grid container columns={{ xs: 1, sm: 2, md: 4 }} spacing={2}>
+          <Grid xs={1}>
+            <Box display={"inline-block"}>
+              <ECard posTop>
+                <EImage width='100%' src='https://source.unsplash.com/random?wallpapers' />
+              </ECard>
+              <ECard>
+                <ETypography
+                  title='Title'
+                  content='This is content blablabla wrywrywry giaogiao \n lol'
+                />
+              </ECard>
+            </Box>
+          </Grid>
+          <Grid xs={1} md={2}>
+            <Box display={"inline-block"}>
+              <ECard posTop>
+                <EImage width='100%' src='https://source.unsplash.com/random?wallpapers' />
+              </ECard>
+              <ECard>
+                <ETypography
+                  title='Title'
+                  content='This is content blablabla wrywrywry giaogiao \n lol'
+                />
+              </ECard>
+            </Box>
+          </Grid>
+          <Grid xs={1} sm={2} md={4}>
+            <Box display={"inline-block"}>
+              <ECard posTop>
+                <EImage width='100%' src='https://source.unsplash.com/random?wallpapers' />
+              </ECard>
+              <ECard>
+                <ETypography
+                  title='Title'
+                  content='This is content blablabla wrywrywry giaogiao \n lol'
+                />
+              </ECard>
+            </Box>
+          </Grid>
+          <Grid xs={1} sm={2} md={4}>
+            <Box display={"inline-block"}>
+              <ECard posTop>
+                <EImage width='100%' src='https://source.unsplash.com/random?wallpapers' />
+              </ECard>
+              <ECard>
+                <ETypography
+                  title='Title'
+                  content='This is content blablabla wrywrywry giaogiao \n lol'
+                />
+              </ECard>
+            </Box>
           </Grid>
         </Grid>
       </Box>
