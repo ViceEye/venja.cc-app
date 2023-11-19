@@ -17,14 +17,16 @@ const App: React.FC = () => {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <CssBaseline />
-          <Box position={"relative"} minHeight={"100vh"}>
-            <Routes>
-              <Route path='/' element={<Dashboard />} />
-              <Route path='/grids' element={<Grids />} />
-              <Route path='/wip' element={<WIP />} />
-              <Route path='/login' element={<SignIn />} />
-              <Route path='/register' element={<SignUp />} />
-            </Routes>
+          <Box display='flex' flexDirection='column' minHeight='100vh'>
+            <Box flex='1'>
+              <Routes>
+                <Route path='/' element={<Dashboard />} />
+                <Route path='/grids' element={<Grids />} />
+                <Route path='/wip' element={<WIP />} />
+                <Route path='/login' element={<SignIn />} />
+                <Route path='/register' element={<SignUp />} />
+              </Routes>
+            </Box>
             <Footer />
           </Box>
         </BrowserRouter>

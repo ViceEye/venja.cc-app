@@ -1,8 +1,11 @@
+import * as React from "react"
+
 import styled from "@emotion/styled"
 import { Box, Button, Checkbox, FormControlLabel, Link, Typography } from "@mui/material"
 
-import FormCard from "../components/FormCard"
-import NoStarTextField from "../components/NoStarTextField"
+import AccountCard from "../components/account/AccountCard"
+import NoStarTextField from "../components/account/NoStarTextField"
+import { useAccountTheme } from "../styles/theme"
 
 const SizedFormContrlLabel = styled(FormControlLabel)({
   "& .MuiTypography-root": {
@@ -14,6 +17,14 @@ const SizedFormContrlLabel = styled(FormControlLabel)({
 })
 
 const SignIn: React.FC = () => {
+  // Background Color
+  React.useEffect(() => {
+    document.body.style.backgroundColor = useAccountTheme.palette.background.default
+    return () => {
+      document.body.style.backgroundColor = ""
+    }
+  }, [])
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
@@ -24,7 +35,7 @@ const SignIn: React.FC = () => {
   }
 
   return (
-    <FormCard>
+    <AccountCard>
       <Box component='form' noValidate onSubmit={handleSubmit}>
         <Typography px={5} py={1} fontSize={28} fontWeight={800}>
           Login
@@ -57,7 +68,7 @@ const SignIn: React.FC = () => {
           Sign In
         </Button>
       </Box>
-    </FormCard>
+    </AccountCard>
   )
 }
 

@@ -1,9 +1,19 @@
+import * as React from "react"
+
 import { Box, Button, Link, Typography } from "@mui/material"
 
-import FormCard from "../components/FormCard"
-import NoStarTextField from "../components/NoStarTextField"
+import AccountCard from "../components/account/AccountCard"
+import NoStarTextField from "../components/account/NoStarTextField"
+import { useAccountTheme } from "../styles/theme"
 
 const SignUp: React.FC = () => {
+  React.useEffect(() => {
+    document.body.style.backgroundColor = useAccountTheme.palette.background.default
+    return () => {
+      document.body.style.backgroundColor = ""
+    }
+  }, [])
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
@@ -14,7 +24,7 @@ const SignUp: React.FC = () => {
   }
 
   return (
-    <FormCard>
+    <AccountCard>
       <Box component='form' noValidate onSubmit={handleSubmit}>
         <Typography px={5} py={1} fontSize={28} fontWeight={800}>
           Register
@@ -34,7 +44,7 @@ const SignUp: React.FC = () => {
           Sign Up
         </Button>
       </Box>
-    </FormCard>
+    </AccountCard>
   )
 }
 
