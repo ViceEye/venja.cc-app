@@ -1,42 +1,21 @@
 {
-  "name": "vite-project",
+  "name": "kazi-card",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.8",
-    "@mui/material": "^5.14.8",
-    "@tiptap/extension-color": "^2.1.8",
-    "@tiptap/extension-highlight": "^2.1.8",
-    "@tiptap/extension-image": "^2.1.8",
-    "@tiptap/extension-typography": "^2.1.8",
-    "@tiptap/pm": "^2.1.8",
-    "@tiptap/react": "^2.1.8",
-    "@tiptap/starter-kit": "^2.1.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
-    "@vitejs/plugin-react": "^4.0.1",
-    "eslint": "^8.44.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.1",
-    "prettier": "^3.0.3",
-    "react-router-dom": "^6.15.0",
-    "sass": "^1.66.1",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.0"
+    "@tailwindcss/vite": "latest",
+    "@vitejs/plugin-react": "latest",
+    "tailwindcss": "latest",
+    "vite": "latest"
   }
 }

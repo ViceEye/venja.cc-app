@@ -1,0 +1,14 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:4173:4173"
+    restart: unless-stopped
+    networks:
+      - system
+
+networks:
+  system:
+    external: true
